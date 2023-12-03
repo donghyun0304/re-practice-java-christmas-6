@@ -8,6 +8,7 @@ public class ErrorMessage {
     public static final String NOT_INCLUDE_COMMA = "[ERROR] , 가 포함되어 있지 않습니다.";
     public static final String NOT_VALID_FORMAT = "[ERROR] 입력 형식이 맞지 않습니다.";
     public static final String NOT_OVER_ZERO = "[ERROR] 0보다 큰 숫자가 아닙니다.";
-    
+    public static final String NOT_FOUND_FOOD = "[ERROR] 음식을 찾을 수 없습니다.";
+
 
 }
