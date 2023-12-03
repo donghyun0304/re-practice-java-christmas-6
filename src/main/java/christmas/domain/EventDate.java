@@ -28,6 +28,11 @@ public class EventDate {
         return this.date.isEqual(date);
     }
 
+    public boolean isBetween(LocalDate startDate, LocalDate endDate){
+        return (this.date.isAfter(startDate) || this.date.isEqual(startDate)) &&
+                (this.date.isBefore(endDate) || this.date.isEqual(endDate));
+    }
+
     public boolean isSameDay(int day){
         return this.date.getDayOfMonth() == day;
     }
