@@ -30,4 +30,11 @@ public class FoodsDto {
                         entry -> entry.getValue()
                 ));
     }
+
+    @Override
+    public String toString() {
+        return "FoodsDto{" +
+                "foods=" + foods +
+                '}';
+    }
 }
