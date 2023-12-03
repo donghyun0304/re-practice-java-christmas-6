@@ -1,6 +1,7 @@
 package christmas.validation;
 
 import christmas.domain.ErrorMessage;
+import christmas.domain.Food;
 import christmas.domain.RegexPattern;
 
 import java.util.List;
@@ -27,6 +28,12 @@ public class InputValidator {
                 .allMatch(str -> inputFoodPatter.matcher(str).matches());
         if(!isValidFormat){
             throw new IllegalArgumentException(ErrorMessage.NOT_VALID_FORMAT);
+        }
+    }
+
+    public static void validateValidFood(String input){
+        if(!Food.hasFood(input)){
+            throw new IllegalArgumentException("[ERROR] 음식이 존재하지 않습니다.");
         }
     }
 
