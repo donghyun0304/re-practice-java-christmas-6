@@ -1,5 +1,7 @@
 package christmas.domain;
 
+import java.util.Arrays;
+
 public enum Food {
     SWEET_POTATO_SOUP("양송이수프", 6_000),
     TAPAS("타파스", 5_500),
@@ -20,6 +22,15 @@ public enum Food {
     Food(String name, int price) {
         this.name = name;
         this.price = price;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public static boolean hasFood(String name){
+        return Arrays.stream(values())
+                .anyMatch(food -> food.getName().equals(name));
     }
 
 
