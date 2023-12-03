@@ -17,9 +17,9 @@ public class EventDate {
 
     public static EventDate from(int day){
         try {
-            LocalDate.of(YEAR, MONTH, day)
+            LocalDate.of(YEAR, MONTH, day);
         } catch (DateTimeException e){
-            new IllegalArgumentException(ErrorMessage.NOT_VALID_DATE, e);
+            throw new IllegalArgumentException(ErrorMessage.NOT_VALID_DATE, e);
         }
         return new EventDate(LocalDate.of(YEAR, MONTH, day));
     }
