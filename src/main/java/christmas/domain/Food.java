@@ -33,5 +33,12 @@ public enum Food {
                 .anyMatch(food -> food.getName().equals(name));
     }
 
+    public static Food find(String name){
+        return Arrays.stream(values())
+                .filter(food -> food.getName().equals(name))
+                .findAny()
+                .orElseThrow(() -> new IllegalArgumentException(ErrorMessage.NOT_FOUND_FOOD));
+    }
+
 
 }
