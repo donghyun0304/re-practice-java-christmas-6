@@ -11,4 +11,10 @@ public class InputValidator {
         }
     }
 
+    public static void validateIncludeComma(String input){
+        if(RegexPattern.NOT_INCLUDE_COMMA.matches(input)){
+            throw new IllegalArgumentException(ErrorMessage.NOT_INCLUDE_COMMA);
+        }
+    }
+
 }
