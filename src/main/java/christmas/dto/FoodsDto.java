@@ -2,6 +2,7 @@ package christmas.dto;
 
 import christmas.domain.Food;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -10,7 +11,7 @@ public class FoodsDto {
     private Map<String, Integer> foods;
 
     public FoodsDto(Map<String, Integer> foods) {
-        this.foods = foods;
+        this.foods = new HashMap<>(foods);
     }
 
     public Map<Food, Integer> getFoods() {
