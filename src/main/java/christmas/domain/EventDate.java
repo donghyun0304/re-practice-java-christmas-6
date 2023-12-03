@@ -28,6 +28,10 @@ public class EventDate {
         return this.date.getDayOfMonth() == day;
     }
 
+    public int getDay(){
+        return date.getDayOfMonth();
+    }
+
     @Override
     public String toString() {
         return "EventDate{" +
