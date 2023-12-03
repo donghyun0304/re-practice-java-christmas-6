@@ -24,6 +24,10 @@ public class EventDate {
         return new EventDate(LocalDate.of(YEAR, MONTH, day));
     }
 
+    public boolean isSameDate(int day){
+        return this.date.getDayOfMonth() == day;
+    }
+
     @Override
     public String toString() {
         return "EventDate{" +
