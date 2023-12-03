@@ -56,10 +56,12 @@ Order
 - 할인 후 예상 결제 금액을 구한다.
 - 배지를 구한다
 
-Discount
+Discount (추상메소드)
 - 날짜에 맞는 할인을 찾는다.
 
 Bassi
 
 Present
+
+
 
