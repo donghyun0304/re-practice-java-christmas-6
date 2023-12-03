@@ -3,5 +3,5 @@ package christmas.constant;
 public class Delimiter {
 
     public static String COMMA = ",";
-    public static String
+    public static String HYPHEN = "-";
 }
