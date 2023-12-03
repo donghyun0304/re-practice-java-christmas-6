@@ -3,7 +3,12 @@ package christmas.validation;
 import christmas.domain.ErrorMessage;
 import christmas.domain.RegexPattern;
 
+import java.util.List;
+import java.util.regex.Pattern;
+
 public class InputValidator {
+
+    private static Pattern inputFoodPatter = Pattern.compile("^[\\p{L} ]+-\\d+$");
 
     public static void validateOnlyNumber(String input){
         if(!RegexPattern.ONLY_NUMBER.matches(input)){
@@ -14,6 +19,14 @@ public class InputValidator {
     public static void validateIncludeComma(String input){
         if(RegexPattern.NOT_INCLUDE_COMMA.matches(input)){
             throw new IllegalArgumentException(ErrorMessage.NOT_INCLUDE_COMMA);
+        }
+    }
+
+    public static void validateInputFoodFormat(List<String> input){
+        boolean isValidFormat = input.stream()
+                .allMatch(str -> inputFoodPatter.matcher(str).matches());
+        if(!isValidFormat){
+            throw new IllegalArgumentException(ErrorMessage.NOT_VALID_FORMAT);
         }
     }
 
