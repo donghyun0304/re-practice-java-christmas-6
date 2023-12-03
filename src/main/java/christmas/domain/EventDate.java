@@ -24,7 +24,11 @@ public class EventDate {
         return new EventDate(LocalDate.of(YEAR, MONTH, day));
     }
 
-    public boolean isSameDate(int day){
+    public boolean isSameDate(LocalDate date){
+        return this.date.isEqual(date);
+    }
+
+    public boolean isSameDay(int day){
         return this.date.getDayOfMonth() == day;
     }
 
