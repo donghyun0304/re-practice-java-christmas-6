@@ -2,6 +2,7 @@ package christmas.domain;
 
 import javax.swing.plaf.BorderUIResource;
 import java.time.DateTimeException;
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 
 public class EventDate {
@@ -35,6 +36,10 @@ public class EventDate {
 
     public boolean isSameDay(int day){
         return this.date.getDayOfMonth() == day;
+    }
+
+    public boolean isSameDayOfWeek(DayOfWeek dayOfWeek){
+        return this.date.getDayOfWeek().equals(dayOfWeek);
     }
 
     public int getDay(){
