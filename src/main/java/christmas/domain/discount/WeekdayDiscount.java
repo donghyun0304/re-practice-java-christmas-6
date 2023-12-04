@@ -5,11 +5,11 @@ import christmas.domain.EventDate;
 
 public class WeekdayDiscount extends Discount{
 
-    private static final String CHRISTMAS_TITLE = "평일 할인";
+    private static final String WEEKDAY_TITLE = "평일 할인";
     private static final int PRICE = 2_023;
 
     private WeekdayDiscount() {
-        super(CHRISTMAS_TITLE, PRICE);
+        super(WEEKDAY_TITLE, PRICE);
     }
 
     public static Discount from(EventDate eventDate){
