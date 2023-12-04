@@ -8,7 +8,7 @@ public class OrderedFoods {
     private final Map<Food, Integer> foods;
 
     public OrderedFoods(final Map<Food, Integer> foods) {
-        this.foods = new EnumMap<>(Food.class);
+        this.foods = new EnumMap<>(foods);
     }
 
     public int calcSumOfPricesOfFoods(){
