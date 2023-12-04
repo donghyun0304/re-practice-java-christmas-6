@@ -2,6 +2,7 @@ package christmas.domain;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.Arrays;
 import java.util.List;
 import java.util.PrimitiveIterator;
@@ -10,7 +11,7 @@ import java.util.function.Predicate;
 public enum DiscountCalendar {
 
     CHRISTMAS( eventDate ->
-            eventDate.isBetween(LocalDate.of(2023,12,1), LocalDate.of(2023,12,25))),
+            isBetweenChristMas(eventDate)),
     WEEKDAYS(eventDate -> {
         List<DayOfWeek> days =
                 Arrays.asList(
@@ -45,9 +46,25 @@ public enum DiscountCalendar {
                 .anyMatch(day -> eventDate.isSameDayOfWeek(day));
     }
 
+    private static final LocalDate START_CHRISTMAS = LocalDate.of(2023, 12, 1);
+    private static final LocalDate END_CHRISTMAS = LocalDate.of(2023, 12, 25);
+
+    private static boolean isBetweenChristMas(EventDate eventDate){
+        return eventDate.isBetween(START_CHRISTMAS, END_CHRISTMAS);
+    }
+
+    public static int calcDaysFromStartChristMas(EventDate eventDate){
+        return Period.between(START_CHRISTMAS, eventDate.getDate()).getDays();
+    }
+
     public static boolean isEventDay(DiscountCalendar discountCalendar, EventDate eventDate){
         return discountCalendar.predicate.test(eventDate);
     }
+
+
+
+
+
 
 //    public static boolean hasChristMas(EventDate eventDate){
 //        return CHRISTMAS.predicate.test(eventDate);
