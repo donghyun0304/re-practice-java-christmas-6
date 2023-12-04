@@ -1,13 +1,22 @@
-package christmas.domain;
+package christmas.domain.discount;
+
+import christmas.domain.EventDate;
 
 public abstract class Discount {
 
-    private final int title;
+    private final String title;
     private final int price;
 
-    public Discount(int title, int price) {
+    protected Discount(String title, int price) {
         this.title = title;
         this.price = price;
     }
 
+    @Override
+    public String toString() {
+        return "Discount{" +
+                "title='" + title + '\'' +
+                ", price=" + price +
+                '}';
+    }
 }
