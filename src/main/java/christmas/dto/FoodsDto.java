@@ -1,6 +1,7 @@
 package christmas.dto;
 
 import christmas.domain.Food;
+import christmas.domain.Foods;
 
 import java.util.Collections;
 import java.util.EnumMap;
@@ -19,8 +20,8 @@ public class FoodsDto {
     public static FoodsDto from(final Map<String, Integer> foods){
         return new FoodsDto(parse(foods));
     }
-    public Map<Food, Integer> getFoods() {
-        return Collections.unmodifiableMap(foods);
+    public Foods getFoods() {
+        return new Foods(foods);
     }
 
     private static Map<Food, Integer> parse(final Map<String, Integer> foods){
