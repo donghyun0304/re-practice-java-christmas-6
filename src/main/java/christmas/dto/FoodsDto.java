@@ -3,6 +3,7 @@ package christmas.dto;
 import christmas.domain.Food;
 
 import java.util.Collections;
+import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -27,7 +28,9 @@ public class FoodsDto {
                 .stream()
                 .collect(Collectors.toMap(
                         entry -> Food.find(entry.getKey()),
-                        entry -> entry.getValue()
+                        entry -> entry.getValue(),
+                        (oldValue, newValue) -> oldValue,
+                        () -> new EnumMap<>(Food.class)
                 ));
     }
 
