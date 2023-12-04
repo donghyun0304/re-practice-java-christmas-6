@@ -1,13 +1,13 @@
 package christmas.domain;
 
-import java.util.Arrays;
 import java.util.EnumMap;
+import java.util.Map;
 
-public class Foods {
+public class OrderedFoods {
 
-    private final EnumMap<Food, Integer> foods;
+    private final Map<Food, Integer> foods;
 
-    public Foods(final EnumMap<Food, Integer> foods) {
+    public OrderedFoods(final Map<Food, Integer> foods) {
         this.foods = new EnumMap<>(Food.class);
     }
 
