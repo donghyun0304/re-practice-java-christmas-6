@@ -28,6 +28,10 @@ public enum Food {
         return name;
     }
 
+    public int getPrice() {
+        return price;
+    }
+
     public static boolean hasFood(String name){
         return Arrays.stream(values())
                 .anyMatch(food -> food.getName().equals(name));
