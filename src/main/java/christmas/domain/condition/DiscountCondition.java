@@ -12,5 +12,7 @@ public interface DiscountCondition {
     Menu getWeekdayDiscountMenu();
     Menu getWeekendDiscountMenu();
 
+
+
 //    boolean hasOnlyDrinks(List<Food> foods);
 }
