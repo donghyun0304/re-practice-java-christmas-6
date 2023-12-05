@@ -17,4 +17,8 @@ public enum Menu {
         this.title = title;
         this.foods = foods;
     }
+
+    public static boolean hasFoodInCategory(final Menu menu, final Food food){
+        return menu.foods.contains(food);
+    }
 }
