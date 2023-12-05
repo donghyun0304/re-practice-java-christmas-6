@@ -39,14 +39,14 @@ public class Order {
     }
 
     public int calcChristmasDiscount(){
-        if(!isMoreThanMinPrice()) {
+        if(!isMoreThanMinPriceForDiscount()) {
             return ZERO;
         }
         return findDiscountAndCalcDiscountPrice(ChristmasDiscount.class);
     }
 
     public int calcWeekdayDiscount(){
-        if(!isMoreThanMinPrice()) {
+        if(!isMoreThanMinPriceForDiscount()) {
             return ZERO;
         }
         return findDiscountAndCalcDiscountPriceWithMenu(
@@ -54,7 +54,7 @@ public class Order {
     }
 
     public int calcWeekendDiscount(){
-        if(!isMoreThanMinPrice()) {
+        if(!isMoreThanMinPriceForDiscount()) {
             return ZERO;
         }
         return findDiscountAndCalcDiscountPriceWithMenu(
@@ -62,7 +62,7 @@ public class Order {
     }
 
     public int calcSpecialDiscount(){
-        if(!isMoreThanMinPrice()) {
+        if(!isMoreThanMinPriceForDiscount()) {
             return ZERO;
         }
         return findDiscountAndCalcDiscountPrice(SpecialDiscount.class);
@@ -85,9 +85,29 @@ public class Order {
         return discounts.findDiscount(discountClass);
     }
 
-    private boolean isMoreThanMinPrice() {
+    private boolean isMoreThanMinPriceForDiscount() {
         return discountCondition.isMoreThanMinPrice(calcTotalPriceBeforeDiscounts());
     }
+
+    public int calcPresentPrice(){
+        if(!isMoreThanMinPriceForPresent()){
+            return ZERO;
+        }
+        return presentCondition.getPresent().getPrice();
+    }
+
+    public Optional<String> getPresentName(){
+        if(!isMoreThanMinPriceForPresent()){
+            return Optional.empty();
+        }
+        return Optional.of(presentCondition.getPresent().getName());
+    }
+
+    private boolean isMoreThanMinPriceForPresent() {
+        return presentCondition.isMoreThanMinPrice(calcTotalPriceBeforeDiscounts());
+    }
+
+
 
 //    private boolean hasOnlyDrinks(DiscountCondition discountCondition){
 //        List<Food> foods = Converter.parseToKeyTypeList(this.foods.getFoods());
