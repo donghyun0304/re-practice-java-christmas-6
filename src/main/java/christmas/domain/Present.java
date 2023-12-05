@@ -1,6 +1,6 @@
 package christmas.domain;
 
-public class Present<T> {
+public class Present<T extends Food> {
 
     private final T present;
 
@@ -10,5 +10,13 @@ public class Present<T> {
 
     public T getPresent() {
         return present;
+    }
+
+    public String getName(){
+        return present.getName();
+    }
+
+    public int getPrice(){
+        return present.getPrice();
     }
 }
