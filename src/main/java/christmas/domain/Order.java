@@ -111,6 +111,10 @@ public class Order {
         return calcDiscountPrice() + calcPresentPrice();
     }
 
+    public int calcTotalPriceAfterDiscounts(){
+        return calcTotalPriceBeforeDiscounts() - calcDiscountPrice();
+    }
+
 
 
 //    private boolean hasOnlyDrinks(DiscountCondition discountCondition){
