@@ -1,5 +1,6 @@
 package christmas.domain;
 
+import java.util.Collections;
 import java.util.EnumMap;
 import java.util.Map;
 
@@ -18,6 +19,6 @@ public class OrderedFoods {
     }
 
     public Map<Food, Integer> getFoods() {
-        return foods;
+        return Collections.unmodifiableMap(foods);
     }
 }
