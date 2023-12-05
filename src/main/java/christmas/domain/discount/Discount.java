@@ -12,6 +12,10 @@ public abstract class Discount {
         this.price = price;
     }
 
+    public int getPrice() {
+        return price;
+    }
+
     @Override
     public String toString() {
         return "Discount{" +
