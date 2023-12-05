@@ -17,5 +17,7 @@ public class OrderedFoods {
                 .sum();
     }
 
-
+    public Map<Food, Integer> getFoods() {
+        return foods;
+    }
 }
