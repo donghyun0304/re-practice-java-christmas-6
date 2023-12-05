@@ -18,6 +18,13 @@ public class OrderedFoods {
                 .sum();
     }
 
+    public int calcAmountOfFoods(Menu menu){
+        return foods.entrySet().stream()
+                .filter(entry -> Menu.hasFoodInCategory(menu, entry.getKey()))
+                .mapToInt(entry -> entry.getValue())
+                .sum();
+    }
+
     public Map<Food, Integer> getFoods() {
         return Collections.unmodifiableMap(foods);
     }
