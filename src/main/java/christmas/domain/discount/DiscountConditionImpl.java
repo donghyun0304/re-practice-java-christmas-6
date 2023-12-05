@@ -17,8 +17,14 @@ public class DiscountConditionImpl implements DiscountCondition{
     }
 
     @Override
-    public boolean hasOnlyDrinks(List<Food> foods) {
-        return foods.stream()
-                .allMatch(food -> Menu.hasFoodInCategory(Menu.DRINKS, food));
+    public Menu getWeekdayDiscountMenu() {
+        return Menu.DESSERT;
     }
+
+
+//    @Override
+//    public boolean hasOnlyDrinks(List<Food> foods) {
+//        return foods.stream()
+//                .allMatch(food -> Menu.hasFoodInCategory(Menu.DRINKS, food));
+//    }
 }
