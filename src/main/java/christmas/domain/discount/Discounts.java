@@ -1,6 +1,7 @@
 package christmas.domain.discount;
 
 import java.util.List;
+import java.util.Optional;
 
 public class Discounts {
 
@@ -8,6 +9,12 @@ public class Discounts {
 
     public Discounts(List<Discount> discounts) {
         this.discounts = discounts;
+    }
+
+    public Optional<Discount> findDiscount(Class<? extends Discount> discountClass){
+        return discounts.stream()
+                .filter(discountClass::isInstance)
+                .findAny();
     }
 
     @Override
