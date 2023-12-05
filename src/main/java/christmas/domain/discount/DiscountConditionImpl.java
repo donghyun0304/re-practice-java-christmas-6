@@ -21,6 +21,11 @@ public class DiscountConditionImpl implements DiscountCondition{
         return Menu.DESSERT;
     }
 
+    @Override
+    public Menu getWeekendDiscountMenu() {
+        return Menu.MAIN;
+    }
+
 
 //    @Override
 //    public boolean hasOnlyDrinks(List<Food> foods) {

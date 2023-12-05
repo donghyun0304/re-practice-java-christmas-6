@@ -10,6 +10,7 @@ public interface DiscountCondition {
     boolean isMoreThanMinPrice(int price);
 
     Menu getWeekdayDiscountMenu();
+    Menu getWeekendDiscountMenu();
 
 //    boolean hasOnlyDrinks(List<Food> foods);
 }
