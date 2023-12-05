@@ -107,6 +107,10 @@ public class Order {
         return presentCondition.isMoreThanMinPrice(calcTotalPriceBeforeDiscounts());
     }
 
+    public int calcBenefitPrice(){
+        return calcDiscountPrice() + calcPresentPrice();
+    }
+
 
 
 //    private boolean hasOnlyDrinks(DiscountCondition discountCondition){
